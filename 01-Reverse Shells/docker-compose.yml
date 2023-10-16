@@ -1,0 +1,25 @@
+version: '3'
+services:
+  metasploitable:
+    image: tleemcjr/metasploitable2
+    volumes:
+      - .:/start
+    networks:
+      subnet1:
+        ipv4_address: 172.16.10.2
+    ports:
+      - "80:80"
+    container_name: metasploitable
+    command: sh -c "
+      /start/start.sh &&
+      tail -f /dev/null
+      "
+
+networks:
+  subnet1:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.10.0/24
+
