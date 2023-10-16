@@ -3,12 +3,12 @@
 ## What is a reverse shell?
 
 To start, let's ask the question, what is a shell? According to
-Wikipedia[^1],
+Wikipedia[^wiki-shell],
 
 >In computing, a shell is a computer program that exposes an operating 
 >system's services to a human user or other programs.
 
-[^1]: https://en.wikipedia.org/wiki/Shell\_(computing)
+[^wiki-shell]: https://en.wikipedia.org/wiki/Shell\_(computing)
 
 Any time you open the "terminal" or the "command prompt" on a computer, you are
 interfacing with the operating system via the shell.
@@ -197,13 +197,6 @@ bookmarking are listed below.
 - [Pentest Monkey Revshell Cheat
   Sheet](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 
-The payload we're using here is a "bash one-liner" that makes use of the
-built-in TCP file redirection functionality of `bash` shells since version 4 or
-so.  This is the reverse shell; it opens a TCP connection to the specified
-IP:port combination, and redirects all output to that
-connection.[^bash-one-liner]
-
-[^bash-one-liner]: https://hypothetical.me/post/reverse-shell-in-bash/#summary
 
 ## Indicators of success
 
@@ -276,8 +269,10 @@ reproduce them.
 This isn't for a grade or anything, but it's good practice.  "Perfect practice
 makes perfect."
 
-# Bonus Tasks
+# Bonus Tasks/Questions
 
+- What is the full command passed to the shell by the DVWA Command Execution
+  vulnerability page?
 - Try some of the other reverse shells from the resources above. Not all will
   work.  If they don't work, see what you can find out about why that would be.
 - Explore the other web apps and attempt to identify and exploit command
