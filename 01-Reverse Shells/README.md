@@ -247,6 +247,7 @@ Now that you have access to a shell on the target, see what you can learn about
 the target system.
 
 - how many other users are on this machine?  how do you know?
+- can we use the credentials we found earlier for anything? if so, for what?
 - are there any other listening services/ports? (hint: use the `ss` and
   `netstat` utilities)
 - what is the IP address of the exploited machine?  is this address the same as
@@ -258,6 +259,28 @@ the target system.
 
 We'll cover privilege escalation techniques in another lab, but I'd like you to
 start thinking about it.
+
+### Why couldn't we login via SSH?
+
+Recall that the metasploit image is running as a Docker container.  This means
+that it's on its own internal network, which is contained _inside_ the SEED
+Ubuntu VM.  
+
+If you inspect the file `docker-compose.yml` in this directory, you'll see some
+lines that look like
+
+```yml
+ports:
+  - "80:80"
+```
+
+These lines _expose_ the Docker machine's port 80 as port 80 on the SEED Ubuntu
+VM.  Notice that these are the only ports exposed from the metasploitable
+image.  All the other ports that turned up in the initial scans belong to the
+SEED Ubuntu VM.  So, if you wanted to log into the SSH service discovered,
+you'd have to use the SEED Ubuntu VM credentials `seed:dees`.
+
+
 
 ## Reporting
 
