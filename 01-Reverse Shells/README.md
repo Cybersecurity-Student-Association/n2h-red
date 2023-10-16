@@ -3,12 +3,12 @@
 ## What is a reverse shell?
 
 To start, let's ask the question, what is a shell? According to
-Wikipedia[^wiki-shell],
+Wikipedia[^1],
 
 >In computing, a shell is a computer program that exposes an operating 
 >system's services to a human user or other programs.
 
-[^wiki-shell]: https://en.wikipedia.org/wiki/Shell\_(computing)
+[^1]: https://en.wikipedia.org/wiki/Shell\_(computing)
 
 Any time you open the "terminal" or the "command prompt" on a computer, you are
 interfacing with the operating system via the shell.
