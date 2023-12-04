@@ -99,7 +99,7 @@ cd n2h-red/01-Reverse\ Shells
 
 # pull and run the docker image
 # LEAVE THIS WINDOW OPEN
-docker compose up
+docker-compose up
 ```
 
 
