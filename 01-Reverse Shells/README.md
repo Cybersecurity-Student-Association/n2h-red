@@ -230,9 +230,9 @@ Connection received from [some IP] <some port number>
 # invoke python TTY module
 python -c 'import pty;pty.spawn("/bin/bash")'
 
-# press \<ctrl-z\> to background the session
+# press <ctrl-z> to background the session
 # you'll be back in the 'kali' shell for these steps
-stty raw -echo; fg # push \<enter\> twice
+stty raw -echo; fg # push <enter> twice
 
 # now you're back in the reverse shell
 export TERM=xterm
